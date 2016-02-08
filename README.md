@@ -7,9 +7,9 @@ A `nodejs` module for pulling all of a user's games and trophies from the [Plays
 To use the API within your code you can use `#request` to return all the games that have been attached to a user's account.
 
 ```
-import { trophies } from 'playstation-trophies';
+import { Trophies } from 'playstation-trophies';
 
-trophies.request('{{username}}', (err, games) => {
+Trophies.request('{{username}}', (err, games) => {
   console.log(`{{username}} has ${games.length} games`);
 })
 ```
@@ -19,7 +19,7 @@ Each `Game` may contain:
 ```json
 {
   "title": "Name of the game",
-  "platform": "PS3|PS4|PSV",
+  "platforms": "[PS3|PS4|VITA]",
   "trophies": "[list of trophies]"
 }
 ```
