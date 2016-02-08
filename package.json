@@ -9,19 +9,22 @@
     "clean": "rm -rf lib bin",
     "cli": "node bin/cli.js",
     "lint": "./node_modules/eslint/bin/eslint.js .",
-    "test": "npm run lint"
+    "test:lib": "./node_modules/mocha/bin/mocha -R spec test/*.js",
+    "test": "npm run lint && npm run test:lib"
   },
   "author": "Jimmy Hillis <jimmy@hillis.me>",
   "license": "MIT",
   "dependencies": {
     "minimist": "^1.2.0",
-    "request": "^2.69.0",
+    "request": "^2.69.0"
   },
   "devDependencies": {
     "babel-eslint": "^4.1.6",
     "babel-preset-es2015": "^6.5.0",
+    "chai": "^3.5.0",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^5.0.0",
-    "eslint-plugin-react": "^3.16.1"
+    "eslint-plugin-react": "^3.16.1",
+    "mocha": "^2.4.5"
   }
 }

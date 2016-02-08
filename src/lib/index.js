@@ -12,19 +12,19 @@ const NOOP = () => undefined;
 
 export class Game {
   constructor({ id = null, title = null, platforms = [],
-      progress = 0, trophies = [], avatar = null }) {
+      progress = 0, trophies = {}, avatar = null }) {
     this.id = id;
     this.title = title;
     this.platforms = platforms;
-    this.progress = progress;
-    this.trophies = trophies;
+    this.progress = parseInt(progress, 10) || 0;
+    this.trophies = Object.assign({ bronze: 0, silver: 0, gold: 0, platinum: 0 }, trophies);
     this.avatar = avatar;
   }
   // Return true if game belongs to platform provided
   // @param {string} platform
   // @return {boolean}
   belongsToPlatform(platform) {
-    return platform in this.platforms;
+    return this.platforms.indexOf(platform) >= 0;
   }
 }
 
