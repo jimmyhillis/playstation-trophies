@@ -1,6 +1,6 @@
 # Playstation Trophies
 
-A `nodejs` module for pulling all of a user's games and trophies from the [Playstation website](https://www.playstation.com/en-us/my/public-trophies/).
+A `nodejs` API to retrieve a user's Playstation trophy data from the [Playstation website](https://www.playstation.com/en-us/my/public-trophies/).
 
 ## Usage
 
